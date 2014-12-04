@@ -1,0 +1,16 @@
+.app-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $app-amber;
+    width: 100%;
+    height: $footer-height-px;
+    text-align: center;
+
+    .camera {
+        line-height: $footer-height-px;
+        color: $app-white;
+        font-size: 48px;
+    }
+
+}

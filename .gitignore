@@ -1,0 +1,6 @@
+node_modules/
+bower_components/
+builds/
+npm-debug.log
+keystore-password
+my-release-key.keystore

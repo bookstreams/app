@@ -1,0 +1,44 @@
+#post-login {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .swipe-view-enter {
+        left: -100%;
+        transition: left .2s;
+
+        &.swipe-view-enter-active {
+            left: 0;
+        }
+    }
+
+    .swipe-view-leave {
+        left: 0;
+        transition: left .2s;
+
+        &.swipe-view-leave-active {
+            left: 100%;
+        }
+    }
+
+    .app-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: $header-height-px;
+        margin-bottom: $footer-height-px;
+        width: 100%;
+        height: calc(100% - #{$header-plus-footer-height-px});
+
+        > div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
+    }
+
+}

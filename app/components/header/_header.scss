@@ -1,0 +1,21 @@
+.app-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $app-amber;
+    width: 100%;
+    height: $header-height-px;
+
+    .logo {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $app-white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+}
