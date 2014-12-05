@@ -1,6 +1,6 @@
 var init = function (flux) {
 
-    var Ceres = new Asteroid("localhost:3000");
+    window.Ceres = new Asteroid("localhost:3000");
 
     Ceres.subscribe("myBooks");
     var Books = Ceres.getCollection("books");

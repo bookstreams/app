@@ -1,5 +1,6 @@
 var Bootstrap = require("react-bootstrap");
 var React     = require("react");
+var Router    = require("react-router");
 
 var Components = require("../../components");
 
@@ -22,12 +23,15 @@ var scan = function (cb) {
         cordova.plugins.barcodeScanner.scan(onSuccess, onError);
     } else {
         cb(null, {
-            text: "9780062060242"
+            text: "9788844034054"
         });
     }
 };
 
 var Add = React.createClass({
+    mixins: [
+        Router.Navigation
+    ],
     getInitialState: function () {
         return {
             barcode: null,
@@ -52,6 +56,7 @@ var Add = React.createClass({
     },
     send: function () {
         var call = Ceres.call("insertBook", this.state.barcode, this.state.qrcode);
+        this.transitionTo("feed");
     },
     getBarcodeButton: function () {
         if (this.state.barcode) {
