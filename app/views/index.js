@@ -1,4 +1,5 @@
 module.exports = {
+    Add:       require("./add/add.jsx"),
     Feed:      require("./feed/feed.jsx"),
     Geo:       require("./geo/geo.jsx"),
     Login:     require("./login/login.jsx"),

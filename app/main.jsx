@@ -11,7 +11,8 @@ var Views = require("./views");
 var routes = (
     <Route handler={Views.Root}>
         <Route name="postLogin" handler={Views.PostLogin}>
-        <Route name="feed" handler={Views.Feed} addHandlerKey={true} />
+            <Route name="add" handler={Views.Add} addHandlerKey={true} />
+            <Route name="feed" handler={Views.Feed} addHandlerKey={true} />
             <Route name="geo" handler={Views.Geo} addHandlerKey={true} />
         </Route>
         <Route name="login" handler={Views.Login} />
