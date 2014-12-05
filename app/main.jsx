@@ -1,8 +1,15 @@
+var Fluxxor = require("fluxxor");
 var React   = require("react");
 var Router  = require("react-router");
 
-window.Ceres = new Asteroid("localhost:3000");
-Ceres.subscribe("myBooks");
+// Flux
+var stores  = require("./stores/");
+var actions = require("./actions/");
+
+var flux = new Fluxxor.Flux(stores, actions);
+
+//Attach to backend
+require("./ceres.jsx").init(flux);
 
 // Views
 var Route = Router.Route;
@@ -20,7 +27,7 @@ var routes = (
 );
 
 Router.run(routes, function (Handler) {
-    React.render(<Handler />, document.body);
+    React.render(<Handler flux={flux} />, document.body);
 });
 
 window.React = React;

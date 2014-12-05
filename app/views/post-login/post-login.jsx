@@ -6,17 +6,6 @@ var Components = require("../../components");
 var Footer = Components.Footer;
 var Header = Components.Header;
 
-//var booksRQ = Ceres.getCollection("books").reactiveQuery({});
-var booksRQ = {
-    result: [{
-        "author": "Daniel Defoe",
-        "title": "Robinson Crusoe",
-        "coverPictureUrl": "http://www.hollywoodreporter.com/sites/default/files/imagecache/blog_post_349_width/2013/12/robinson_crusoe_book_a_p.jpg",
-        "scans": [ ],
-        "_id": "7Lt38YBynAFWdBct8"
-    }]
-};
-
 var PostLogin = React.createClass({
     mixins: [Router.State],
     render: function () {
@@ -25,7 +14,12 @@ var PostLogin = React.createClass({
             <div id="post-login">
                 <Header />
                 <TransitionGroup component="div" className="app-content" transitionName="swipe-view">
-                    <Router.RouteHandler key={name} books={booksRQ.result} />
+                    <Router.RouteHandler
+                        key={name}
+                        flux={this.props.flux}
+                        books={this.props.books}
+                        users={this.props.users}
+                    />
                 </TransitionGroup>
                 <Footer />
             </div>
