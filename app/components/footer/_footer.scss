@@ -6,11 +6,28 @@
     width: 100%;
     height: $footer-height-px;
     text-align: center;
+    color: $app-white;
 
-    .camera {
-        line-height: $footer-height-px;
+    a {
         color: $app-white;
-        font-size: 48px;
+
+        &.active {
+            color: $app-red;
+        }
+
+    }
+
+    .camera-button {
+        cursor: pointer;
+    }
+
+    .fa {
+        margin: {
+            left: 40px;
+            right: 40px;
+        }
+        line-height: $footer-height-px;
+        font-size: 36px;
     }
 
 }

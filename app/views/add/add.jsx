@@ -8,27 +8,7 @@ var Button = Bootstrap.Button;
 var Col    = Bootstrap.Col;
 var Well   = Bootstrap.Well;
 
-var cameraScan = function (cb) {
-    var onSuccess = function (result) {
-        if (result.cancelled) {
-            cb(new Error("Scan cancelled"), null);
-            return;
-        }
-        cb(null, result.text);
-    };
-    var onError = function (err) {
-        cb(err, null);
-    };
-    if (window.cordova) {
-        cordova.plugins.barcodeScanner.scan(onSuccess, onError);
-    } else {
-        if (Math.random() > 0.5) {
-            cb(new Error());
-        } else {
-            cb(null, "9788854165472");
-        }
-    }
-};
+var cameraScan = require("../../camera-scan.js");
 
 var titleCaseWord = function (word) {
     return word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase();
@@ -47,12 +27,19 @@ var Add = React.createClass({
     scan: function (target) {
         var self = this;
         return function () {
-            cameraScan(function (err, res) {
-                var state = {};
-                state[target] = res;
-                state[target + "Error"] = err;
-                self.setState(state);
-            });
+            cameraScan()
+                .then(function (res) {
+                    var state = {};
+                    state[target] = res;
+                    state[target + "Error"] = null;
+                    self.setState(state);
+                })
+                .fail(function (err) {
+                    var state = {};
+                    state[target] = null;
+                    state[target + "Error"] = err;
+                    self.setState(state);
+                });
         };
     },
     insertBook: function () {
