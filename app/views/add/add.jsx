@@ -8,24 +8,30 @@ var Button = Bootstrap.Button;
 var Col    = Bootstrap.Col;
 var Well   = Bootstrap.Well;
 
-var scan = function (cb) {
+var cameraScan = function (cb) {
     var onSuccess = function (result) {
         if (result.cancelled) {
-            cb(new Error("Scan cancelled"));
+            cb(new Error("Scan cancelled"), null);
             return;
         }
-        cb(null, result);
+        cb(null, result.text);
     };
     var onError = function (err) {
-        cb(err);
+        cb(err, null);
     };
     if (window.cordova) {
         cordova.plugins.barcodeScanner.scan(onSuccess, onError);
     } else {
-        cb(null, {
-            text: "9788844034054"
-        });
+        if (Math.random() > 0.5) {
+            cb(new Error());
+        } else {
+            cb(null, "9788854165472");
+        }
     }
+};
+
+var titleCaseWord = function (word) {
+    return word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase();
 };
 
 var Add = React.createClass({
@@ -38,58 +44,57 @@ var Add = React.createClass({
             qrcode: null
         };
     },
-    scanBarcode: function () {
+    scan: function (target) {
         var self = this;
-        scan(function (err, result) {
-            self.setState({
-                barcode: result.text
+        return function () {
+            cameraScan(function (err, res) {
+                var state = {};
+                state[target] = res;
+                state[target + "Error"] = err;
+                self.setState(state);
             });
-        });
+        };
     },
-    scanQrcode: function () {
+    insertBook: function () {
         var self = this;
-        scan(function (err, result) {
-            self.setState({
-                qrcode: result.text
+        var call = Ceres.call("insertBook", self.state.barcode, self.state.qrcode);
+        call.result
+            .then(function (res) {
+                return call.updated;
+            })
+            .then(function () {
+                self.transitionTo("feed");
+            })
+            .fail(function (err) {
+                self.setState({
+                    insertBookError: err
+                });
             });
-        });
     },
-    send: function () {
-        var call = Ceres.call("insertBook", this.state.barcode, this.state.qrcode);
-        this.transitionTo("feed");
-    },
-    getBarcodeButton: function () {
-        if (this.state.barcode) {
+    getScanButton: function (target, step, instructions) {
+        if (this.state[target]) {
             return (
-                <Well>
-                    <h4>Barcode acquired</h4>
-                    <h3>{this.state.barcode}</h3>
+                <Well className="valid">
+                    <h5>STEP {step}</h5>
+                    <h4>{titleCaseWord(target)} acquired</h4>
+                </Well>
+            );
+        } else if (this.state[target + "Error"]) {
+            return (
+                <Well className="invalid" onClick={this.scan(target)}>
+                    <h5>STEP {step}</h5>
+                    <h4>
+                        An error occurred scanning the {target}
+                        <br />
+                        try again
+                    </h4>
                 </Well>
             );
         } else {
             return (
-                <Well onClick={this.scanBarcode}>
-                    <h4>Scan the barcode on the back of your book</h4>
-                    <br />
-                    <Button>Scan</Button>
-                </Well>
-            );
-        }
-    },
-    getQrcodeButton: function () {
-        if (this.state.qrcode) {
-            return (
-                <Well>
-                    <h4>QR acquired</h4>
-                    <h3>{this.state.qrcode}</h3>
-                </Well>
-            );
-        } else {
-            return (
-                <Well onClick={this.scanQrcode}>
-                    <h4>Scan the QR code on the sticker</h4>
-                    <br />
-                    <Button>Scan</Button>
+                <Well onClick={this.scan(target)}>
+                    <h5>STEP {step}</h5>
+                    <h4>{instructions}</h4>
                 </Well>
             );
         }
@@ -97,11 +102,43 @@ var Add = React.createClass({
     getSendButton: function () {
         if (this.state.barcode && this.state.qrcode) {
             return (
-                <Button onClick={this.send}>Send</Button>
+                <Well onClick={this.insertBook}>
+                    SEND
+                </Well>
             );
         } else {
             return null;
         }
+    },
+    getBookErrorModal: function () {
+        if (this.state.insertBookError) {
+            return (
+                <div className="overlay" onClick={this.closeErrorModal}>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <h1>
+                        Oh snap!
+                        <br />
+                        An error occurred!
+                    </h1>
+                    <br />
+                    <br />
+                    <h3>
+                        We're figuring out what happened
+                        <br />
+                        <br />
+                        Please try again
+                    </h3>
+                </div>
+            );
+        } else {
+            return null;
+        }
+    },
+    closeErrorModal: function () {
+        this.replaceState({});
     },
     render: function () {
         return (
@@ -109,16 +146,20 @@ var Add = React.createClass({
                 <Col xs={12} className="text-center">
                     <br />
                     <br />
-                    <br />
-                    {this.getBarcodeButton()}
-                    <br />
-                    <br />
-                    <br />
-                    {this.getQrcodeButton()}
-                    <br />
+                    {this.getScanButton(
+                        "barcode",
+                        "1",
+                        "Scan the barcode on the back of your book"
+                    )}
+                    {this.getScanButton(
+                        "qrcode",
+                        "2",
+                        "Scan the qrcode on the bookstreams sticker"
+                    )}
                     <br />
                     <br />
                     {this.getSendButton()}
+                    {this.getBookErrorModal()}
                 </Col>
             </div>
         );

@@ -7,7 +7,7 @@ var Header = React.createClass({
         return (
             <header className="app-header">
                 <div className="logo">
-                    bookstream
+                    bookstreams
                 </div>
             </header>
         );
