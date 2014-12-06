@@ -9,6 +9,7 @@ var Col    = Bootstrap.Col;
 var Well   = Bootstrap.Well;
 
 var cameraScan = require("../../camera-scan.js");
+var geolocate  = require("../../geolocate.js");
 
 var titleCaseWord = function (word) {
     return word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase();
@@ -44,10 +45,17 @@ var Add = React.createClass({
     },
     insertBook: function () {
         var self = this;
-        var call = Ceres.call("insertBook", self.state.barcode, self.state.qrcode);
-        call.result
-            .then(function (res) {
-                return call.updated;
+        Q()
+            .then(function () {
+                return self.geolocatePromise;
+            })
+            .then(function (coords) {
+                return Ceres.call(
+                    "insertBook",
+                    self.state.barcode,
+                    self.state.qrcode,
+                    coords
+                ).result;
             })
             .then(function () {
                 self.transitionTo("feed");
@@ -126,6 +134,9 @@ var Add = React.createClass({
     },
     closeErrorModal: function () {
         this.replaceState({});
+    },
+    componentDidMount: function () {
+        this.geolocatePromise = geolocate();
     },
     render: function () {
         return (

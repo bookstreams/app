@@ -2,7 +2,7 @@ var init = function (flux) {
 
     var targets = {
         "web.dev": {
-            domain: "localhost:3000"
+            domain: "192.168.1.129:3000"
         },
         "ios.dev": {
             domain: "localhost:3000"
