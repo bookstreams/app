@@ -1,26 +1,45 @@
-var Bootstrap = require("react-bootstrap");
-var React     = require("react");
-
-var Button = Bootstrap.Button;
-var Col    = Bootstrap.Col;
+var React  = require("react");
+var Router = require("react-router");
 
 var Login = React.createClass({
+    mixins: [
+        Router.Navigation
+    ],
+    getInitialState: function () {
+        return {
+            loginError: null
+        };
+    },
     login: function () {
-        Ceres.loginWithFacebook();
+        var self = this;
+        Ceres.loginWithFacebook()
+            .then(function () {
+                self.transitionTo("feed");
+            })
+            .fail(function (err) {
+                console.log(err);
+                self.setState({
+                    loginError: true
+                });
+            });
+    },
+    getErrorAlert: function () {
+        if (!this.state.loginError) {
+            return null;
+        }
+        return (
+            <div className="error-alert">
+                Error logging in, try again
+            </div>
+        );
     },
     render: function () {
         return (
             <div id="login">
-                <Col xs={12} className="text-center">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <Button onClick={this.login}>
-                        Login
-                    </Button>
-                </Col>
+                {this.getErrorAlert()}
+                <div className="login-button" onClick={this.login}>
+                    Login with Facebook
+                </div>
             </div>
         );
     }

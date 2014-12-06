@@ -1,0 +1,62 @@
+<svg version="1.1" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect
+        x="0"
+        y="0"
+        width="1080"
+        height="1920"
+        fill="#FFFFFF">
+    </rect>
+    <g id="obj_3" transform="matrix(1,0,0,1,515,0)" opacity="1" display="inline">
+        <path
+            d="M 54.8512 1092.2491 L 0 1150 L 0 0 L 110 0 L 110 1150 L 54.8512 1092.2491 Z "
+            fill-opacity="1"
+            fill="#f44336"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="square"
+            stroke-linejoin="miter">
+        </path>
+    </g>
+    <g id="obj_6" transform="matrix(1,0,0,1,375,0)" opacity="1" display="inline">
+        <path
+            d="M 59.8377 840.7837 L 0 900 L 0 0 L 120 0 L 120 900 L 59.8377 840.7837 Z "
+            fill-opacity="1"
+            fill="#4caf50"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="square"
+            stroke-linejoin="miter">
+        </path>
+    </g>
+    <g id="obj_7" transform="matrix(1,0,0,1,215,0)" opacity="1" display="inline">
+        <path
+            d="M 69.8106 1224.2436 L 0 1300 L 0 0 L 140 0 L 140 1300 L 69.8106 1224.2436 Z "
+            fill-opacity="1"
+            fill="#ffc107"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="square"
+            stroke-linejoin="miter">
+        </path>
+    </g>
+    <g id="obj_8" transform="matrix(1,0,0,1,645,0)" opacity="1" display="inline">
+        <path d="M 64.8241 434.6173 L 0 500 L 0 0 L 130 0 L 130 500 L 64.8241 434.6173 Z "
+            fill-opacity="1"
+            fill="#9c27b0"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="square"
+            stroke-linejoin="miter">
+        </path>
+    </g>
+    <g id="obj_9" transform="matrix(1,0,0,1,75,0)" opacity="1" display="inline">
+        <path d="M 59.8377 711.3194 L 0 770 L 0 0 L 120 0 L 120 770 L 59.8377 711.3194 Z "
+            fill-opacity="1"
+            fill="#2196f3"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="square"
+            stroke-linejoin="miter">
+        </path>
+    </g>
+</svg>
