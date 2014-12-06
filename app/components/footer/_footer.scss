@@ -2,7 +2,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background: $app-amber;
+    background: $app-blue;
     width: 100%;
     height: $footer-height-px;
     text-align: center;
@@ -12,7 +12,7 @@
         color: $app-white;
 
         &.active {
-            color: $app-red;
+            color: $app-indigo;
         }
 
     }
