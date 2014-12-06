@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>bookstream</title>
+        <title>bookstreams</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
@@ -16,14 +16,68 @@
         <!-- App CSS -->
         <link href="assets/app.css" type="text/css" rel="stylesheet" />
 
-        <!-- Vendor JS -->
-        <script src="assets/scripts/ddp.js"></script>
-        <script src="assets/scripts/q.js"></script>
-        <script src="assets/scripts/asteroid.browser.js"></script>
-        <script src="assets/scripts/asteroid-facebook-login.js"></script>
+        <!-- @if TARGET=='web.dev' -->
+            <script>
+                window.APP_TARGET = "web.dev";
+            </script>
+            <!-- Vendor JS -->
+            <script src="assets/scripts/ddp.js"></script>
+            <script src="assets/scripts/q.js"></script>
+            <script src="assets/scripts/asteroid.browser.js"></script>
+            <script src="assets/scripts/asteroid-facebook-login.js"></script>
+        <!-- @endif -->
 
-        <!-- Cordova plugins -->
-        <!--<script src="cordova.js"></script>-->
+        <!-- @if TARGET=='ios.dev' -->
+            <script>
+                window.APP_TARGET = "ios.dev";
+            </script>
+            <!-- Vendor JS -->
+            <script src="assets/scripts/ddp.js"></script>
+            <script src="assets/scripts/q.js"></script>
+            <script src="assets/scripts/asteroid.cordova.js"></script>
+            <script src="assets/scripts/asteroid-facebook-login.js"></script>
+            <!-- Cordova JS -->
+            <script src="cordova.js"></script>
+        <!-- @endif -->
+
+        <!-- @if TARGET=='ios.prod' -->
+            <script>
+                window.APP_TARGET = "ios.prod";
+            </script>
+            <!-- Vendor JS -->
+            <script src="assets/scripts/ddp.js"></script>
+            <script src="assets/scripts/q.js"></script>
+            <script src="assets/scripts/asteroid.cordova.js"></script>
+            <script src="assets/scripts/asteroid-facebook-login.js"></script>
+            <!-- Cordova JS -->
+            <script src="cordova.js"></script>
+        <!-- @endif -->
+
+        <!-- @if TARGET=='android.dev' -->
+            <script>
+                window.APP_TARGET = "android.dev";
+            </script>
+            <!-- Vendor JS -->
+            <script src="assets/scripts/ddp.js"></script>
+            <script src="assets/scripts/q.js"></script>
+            <script src="assets/scripts/asteroid.cordova.js"></script>
+            <script src="assets/scripts/asteroid-facebook-login.js"></script>
+            <!-- Cordova JS -->
+            <script src="cordova.js"></script>
+        <!-- @endif -->
+
+        <!-- @if TARGET=='android.prod' -->
+            <script>
+                window.APP_TARGET = "android.prod";
+            </script>
+            <!-- Vendor JS -->
+            <script src="assets/scripts/ddp.js"></script>
+            <script src="assets/scripts/q.js"></script>
+            <script src="assets/scripts/asteroid.cordova.js"></script>
+            <script src="assets/scripts/asteroid-facebook-login.js"></script>
+            <!-- Cordova JS -->
+            <script src="cordova.js"></script>
+        <!-- @endif -->
 
     </head>
 

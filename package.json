@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node scripts/dev.server.js",
-    "ios": "node scripts/ios.prod.js",
-    "android": "node scripts/android.prod.js",
-    "android.dev": "node scripts/android.dev.js"
+    "web.dev": "node scripts/web.dev.js",
+    "ios.dev": "node scripts/ios.dev.js",
+    "ios.prod": "node scripts/ios.prod.js",
+    "android.dev": "node scripts/android.dev.js",
+    "android.prod": "node scripts/android.prod.js"
   },
   "author": "",
   "license": "ISC",

@@ -23,6 +23,7 @@ var buildAppIndex = function (target) {
 	return new BPromise(function (resolve, reject) {
 		gulp.src("app/main.html")
 			.pipe(gp.plumber(reject))
+			.pipe(gp.preprocess({context: {TARGET: target}}))
 			.pipe(gp.rename("index.html"))
 			.pipe(gulp.dest("builds/" + target + "/"))
 			.on("end", resolve);

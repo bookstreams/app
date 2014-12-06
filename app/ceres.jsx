@@ -1,6 +1,27 @@
 var init = function (flux) {
 
-    window.Ceres = new Asteroid("localhost:3000");
+    var targets = {
+        "web.dev": {
+            domain: "localhost:3000"
+        },
+        "ios.dev": {
+            domain: "localhost:3000"
+        },
+        "ios.prod": {
+            domain: "api.bookstreams.org",
+            ssl: true
+        },
+        "android.dev": {
+            domain: "192.168.1.129:3000"
+        },
+        "android.prod": {
+            domain: "api.bookstreams.org",
+            ssl: true
+        }
+    };
+
+    var target = targets[APP_TARGET];
+    window.Ceres = new Asteroid(target.domain, target.ssl);
 
     Ceres.subscribe("myBooks");
     var Books = Ceres.getCollection("books");
