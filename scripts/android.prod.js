@@ -31,7 +31,7 @@ BPromise.all(buildPromises).then(function () {
     sh.run("cd builds/android && cordova plugin add org.apache.cordova.geolocation");
     sh.run("cd builds/android && cordova plugin add com.phonegap.plugins.barcodescanner");
     sh.run("rm -rf builds/android/www/");
-    sh.run("mv builds/android.dev builds/android/www");
+    sh.run("mv builds/android.prod builds/android/www");
     // Write configurations
     var version = process.argv[2];
     if (semver.valid(version) === null) {
@@ -48,11 +48,9 @@ BPromise.all(buildPromises).then(function () {
             return;
         }
         res.widget.$.version = version;
-        res.widget.platform = [{
-            $: {
-                name: "android"
-            }
-        }];
+        res.widget.platform = {$: {
+            name: "android"
+        }};
         res.widget.platform.icon = [
             [48, "mdpi"],
             [72, "hdpi"],
@@ -77,16 +75,15 @@ BPromise.all(buildPromises).then(function () {
                 density: "port-" + size[2]
             }};
         });
-        sh.run("cd builds/android && mv www/assets/icon.png platforms/android/res/");
         var builder = new xml2js.Builder();
         var xml = builder.buildObject(res);
         fs.writeFileSync("builds/android/config.xml", xml, "utf8");
         // Build
         sh.run("cd builds/android && cordova build --release android");
         // Release
-        sh.run("jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -storepass:file keystore-password builds/android/platforms/android/out/bookstreams-release-unsigned.apk alias_name");
+        sh.run("jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -storepass:file keystore-password builds/android/platforms/android/ant-build/CordovaApp-release-unsigned.apk alias_name");
         sh.run("rm builds/bookstreams-release.apk");
-        sh.run("zipalign -v 4 builds/android/platforms/android/out/bookstreams-release-unsigned.apk builds/bookstreams-release.apk");
+        sh.run("zipalign -v 4 builds/android/platforms/android/ant-build/CordovaApp-release-unsigned.apk builds/bookstreams-release.apk");
         console.log(chalk.green.bold("SUCCESS"));
     });
 

@@ -47,11 +47,9 @@ BPromise.all(buildPromises).then(function () {
             return;
         }
         res.widget.$.version = version;
-        res.widget.platform = {
-            $: {
-                name: "ios"
-            }
-        };
+        res.widget.platform = {$: {
+            name: "ios"
+        }};
         res.widget.platform.icon = [
             76,
             120,
