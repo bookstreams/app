@@ -33,6 +33,17 @@ var Login = React.createClass({
             </div>
         );
     },
+    statics: {
+        willTransitionTo: function (t) {
+            var def = Q.defer();
+            Ceres.on("connected", function () {
+                Ceres.resumeLoginPromise
+                    .then(t.redirect.bind(t, "feed"))
+                    .finally(def.resolve.bind(def));
+            });
+            t.wait(def.promise);
+        }
+    },
     render: function () {
         return (
             <div id="login">
