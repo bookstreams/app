@@ -3,6 +3,7 @@ var React     = require("react");
 var Router    = require("react-router");
 
 var Components = require("../../components");
+var Icon = Components.Icon;
 
 var Button = Bootstrap.Button;
 var Col    = Bootstrap.Col;
@@ -22,7 +23,8 @@ var Add = React.createClass({
     getInitialState: function () {
         return {
             barcode: null,
-            qrcode: null
+            qrcode: null,
+            insertingBook: null
         };
     },
     scan: function (target) {
@@ -45,6 +47,12 @@ var Add = React.createClass({
     },
     insertBook: function () {
         var self = this;
+        if (self.state.insertingBook) {
+            return;
+        }
+        self.setState({
+            insertingBook: true
+        });
         Q()
             .then(function () {
                 return self.geolocatePromise;
@@ -58,9 +66,13 @@ var Add = React.createClass({
                 ).result;
             })
             .then(function () {
+                self.setState({
+                    insertingBook: null
+                });
                 self.transitionTo("feed");
             })
             .fail(function (err) {
+                console.log(err);
                 self.setState({
                     insertBookError: err
                 });
@@ -95,42 +107,35 @@ var Add = React.createClass({
         }
     },
     getSendButton: function () {
-        if (this.state.barcode && this.state.qrcode) {
+        if (!this.state.barcode || !this.state.qrcode) {
+            return null;
+        }
+        if (this.state.insertingBook) {
+            return (
+                <Well>
+                    <Icon icon="circle-o-notch" className="fa-spin grey-icon" />
+                </Well>
+            );
+        } else {
             return (
                 <Well onClick={this.insertBook}>
                     SEND
                 </Well>
             );
-        } else {
-            return null;
         }
     },
     getBookErrorModal: function () {
-        if (this.state.insertBookError) {
-            return (
-                <div className="overlay" onClick={this.closeErrorModal}>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <h1>
-                        Oh snap!
-                        <br />
-                        An error occurred!
-                    </h1>
-                    <br />
-                    <br />
-                    <h3>
-                        We're figuring out what happened
-                        <br />
-                        <br />
-                        Please try again
-                    </h3>
-                </div>
-            );
-        } else {
+        if (!this.state.insertBookError) {
             return null;
         }
+        return (
+            <div className="overlay" onClick={this.closeErrorModal}>
+                <Icon icon="exclamation-triangle" className="error-icon" />
+                <p className="error-message">
+                    {this.state.insertBookError.reason}
+                </p>
+            </div>
+        );
     },
     closeErrorModal: function () {
         this.replaceState({});

@@ -3,13 +3,36 @@ var React     = require("react");
 
 var Panel = Bootstrap.Panel;
 
+var maybe = function (obj, chain, def) {
+    def = def || null;
+    return chain.reduce(function (acc, link) {
+        if (acc && acc[link] && acc !== def) {
+            return acc[link];
+        } else {
+            return def;
+        }
+    }, obj);
+};
+
 var Book = React.createClass({
     render: function () {
         var rawInfo = this.props.book.info.volumeInfo;
         var book = {
-            author: rawInfo.authors[0],
-            title: rawInfo.title,
-            coverPictureUrl: rawInfo.imageLinks.thumbnail
+            author: maybe(
+                rawInfo,
+                ["authors", "0"],
+                "Unknown"
+            ),
+            title: maybe(
+                rawInfo,
+                ["title"],
+                "Untitled"
+            ),
+            coverPictureUrl: maybe(
+                rawInfo,
+                ["imageLinks", "thumbnail"],
+                "assets/images/default-cover.png"
+            )
         };
         return (
             <Panel className="app-book">

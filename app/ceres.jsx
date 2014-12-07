@@ -2,16 +2,16 @@ var init = function (flux) {
 
     var targets = {
         "web.dev": {
-            domain: "192.168.1.129:3000"
+            domain: "192.168.0.152:3000"
         },
         "ios.dev": {
-            domain: "192.168.1.129:3000"
+            domain: "192.168.0.152:3000"
         },
         "ios.prod": {
             domain: "api.bookstreams.org"
         },
         "android.dev": {
-            domain: "192.168.1.129:3000"
+            domain: "192.168.0.152:3000"
         },
         "android.prod": {
             domain: "api.bookstreams.org"

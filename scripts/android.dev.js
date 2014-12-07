@@ -12,7 +12,7 @@ var buildPromises = _.keys(build).map(function (key) {
 
 BPromise.all(buildPromises).then(function () {
     sh.run("rm -rf builds/android/");
-    sh.run("cordova create builds/android org.bookstreams.app bookstreams");
+    sh.run("cordova create builds/android org.bookstreams.app.dev bookstreams");
     sh.run("cd builds/android && cordova platform add android");
     sh.run("cd builds/android && cordova plugin add org.apache.cordova.device");
     sh.run("cd builds/android && cordova plugin add org.apache.cordova.inappbrowser");
