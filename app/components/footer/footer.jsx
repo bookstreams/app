@@ -13,7 +13,7 @@ var Footer = React.createClass({
     ],
     getInitialState: function () {
         return {
-            insertBookError: null
+            addBookScanError: null
         };
     },
     scan: function () {
@@ -34,37 +34,26 @@ var Footer = React.createClass({
             .fail(function (err) {
                 console.log(err);
                 self.setState({
-                    insertBookError: err
+                    addBookScanError: err
                 });
             });
     },
     getBookErrorModal: function () {
-        if (this.state.insertBookError) {
-            return (
-                <div className="overlay" onClick={this.closeErrorModal}>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <h1>
-                        Oh snap!
-                        <br />
-                        An error occurred!
-                    </h1>
-                    <br />
-                    <br />
-                    <h3>
-                        {this.insertBookError}
-                    </h3>
-                </div>
-            );
-        } else {
+        if (!this.state.addBookScanError) {
             return null;
         }
+        return (
+            <div className="overlay" onClick={this.closeErrorModal}>
+                <Icon icon="exclamation-triangle" className="error-icon" />
+                <p className="error-message">
+                    {this.state.addBookScanError.reason}
+                </p>
+            </div>
+        );
     },
     closeErrorModal: function () {
         this.setState({
-            insertBookError: null
+            addBookScanError: null
         });
     },
     render: function () {

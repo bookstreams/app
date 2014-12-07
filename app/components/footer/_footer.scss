@@ -40,6 +40,17 @@
         height: 100%;
         text-align: center;
         color: $app-white;
+
+        .error-icon {
+            margin-top: 100px;
+            color: $app-white;
+            font-size: 64px;
+        }
+
+        .error-message {
+            margin-top: 20px;
+        }
+
     }
 
 }

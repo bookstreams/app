@@ -13,11 +13,7 @@ var cameraScan = function () {
     if (window.cordova) {
         cordova.plugins.barcodeScanner.scan(onSuccess, onError);
     } else {
-        if (Math.random() > 0.5) {
-            deferred.reject(new Error("NOT THIS TIME!!!"));
-        } else {
-            deferred.resolve("9788845907555");
-        }
+        deferred.resolve("9788845907555");
     }
     return deferred.promise;
 };
