@@ -1,62 +1,170 @@
-<svg version="1.1" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <rect
-        x="0"
-        y="0"
-        width="1080"
-        height="1920"
-        fill="#FFFFFF">
-    </rect>
-    <g id="obj_3" transform="matrix(1,0,0,1,515,0)" opacity="1" display="inline">
-        <path
-            d="M 54.8512 1092.2491 L 0 1150 L 0 0 L 110 0 L 110 1150 L 54.8512 1092.2491 Z "
-            fill-opacity="1"
-            fill="#f44336"
-            stroke="none"
-            stroke-width="1"
-            stroke-linecap="square"
-            stroke-linejoin="miter">
-        </path>
-    </g>
-    <g id="obj_6" transform="matrix(1,0,0,1,375,0)" opacity="1" display="inline">
-        <path
-            d="M 59.8377 840.7837 L 0 900 L 0 0 L 120 0 L 120 900 L 59.8377 840.7837 Z "
-            fill-opacity="1"
-            fill="#4caf50"
-            stroke="none"
-            stroke-width="1"
-            stroke-linecap="square"
-            stroke-linejoin="miter">
-        </path>
-    </g>
-    <g id="obj_7" transform="matrix(1,0,0,1,215,0)" opacity="1" display="inline">
-        <path
-            d="M 69.8106 1224.2436 L 0 1300 L 0 0 L 140 0 L 140 1300 L 69.8106 1224.2436 Z "
-            fill-opacity="1"
-            fill="#ffc107"
-            stroke="none"
-            stroke-width="1"
-            stroke-linecap="square"
-            stroke-linejoin="miter">
-        </path>
-    </g>
-    <g id="obj_8" transform="matrix(1,0,0,1,645,0)" opacity="1" display="inline">
-        <path d="M 64.8241 434.6173 L 0 500 L 0 0 L 130 0 L 130 500 L 64.8241 434.6173 Z "
-            fill-opacity="1"
-            fill="#9c27b0"
-            stroke="none"
-            stroke-width="1"
-            stroke-linecap="square"
-            stroke-linejoin="miter">
-        </path>
-    </g>
-    <g id="obj_9" transform="matrix(1,0,0,1,75,0)" opacity="1" display="inline">
-        <path d="M 59.8377 711.3194 L 0 770 L 0 0 L 120 0 L 120 770 L 59.8377 711.3194 Z "
-            fill-opacity="1"
-            fill="#2196f3"
-            stroke="none"
-            stroke-width="1"
-            stroke-linecap="square"
-            stroke-linejoin="miter">
-        </path>
-    </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="1080"
+   height="1920"
+   viewBox="0 0 1080 1920"
+   id="svg3055"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="background.svg">
+  <metadata
+     id="metadata3085">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1436"
+     inkscape:window-height="855"
+     id="namedview3083"
+     showgrid="false"
+     inkscape:zoom="0.23901682"
+     inkscape:cx="962.1599"
+     inkscape:cy="858.21213"
+     inkscape:window-x="4"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3055" />
+  <defs
+     id="defs3057">
+    <style
+       type="text/css"
+       id="style3059">
+            @import url(https://fonts.googleapis.com/css?family=Lato);
+        </style>
+  </defs>
+  <rect
+     x="0"
+     y="0"
+     width="1080"
+     height="1920"
+     fill="#FFFFFF"
+     id="rect3061"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <g
+     id="obj_3"
+     transform="matrix(1,0,0,1,515,0)"
+     opacity="1"
+     display="inline"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
+    <path
+       d="M 54.8512 1092.2491 L 0 1150 L 0 0 L 110 0 L 110 1150 L 54.8512 1092.2491 Z "
+       fill-opacity="1"
+       fill="#f44336"
+       stroke="none"
+       stroke-width="1"
+       stroke-linecap="square"
+       stroke-linejoin="miter"
+       id="path3064" />
+  </g>
+  <g
+     id="obj_6"
+     transform="matrix(1,0,0,1,375,0)"
+     opacity="1"
+     display="inline"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
+    <path
+       d="M 59.8377 840.7837 L 0 900 L 0 0 L 120 0 L 120 900 L 59.8377 840.7837 Z "
+       fill-opacity="1"
+       fill="#4caf50"
+       stroke="none"
+       stroke-width="1"
+       stroke-linecap="square"
+       stroke-linejoin="miter"
+       id="path3067" />
+  </g>
+  <g
+     id="obj_7"
+     transform="matrix(1,0,0,1,215,0)"
+     opacity="1"
+     display="inline"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
+    <path
+       d="M 69.8106 1224.2436 L 0 1300 L 0 0 L 140 0 L 140 1300 L 69.8106 1224.2436 Z "
+       fill-opacity="1"
+       fill="#ffc107"
+       stroke="none"
+       stroke-width="1"
+       stroke-linecap="square"
+       stroke-linejoin="miter"
+       id="path3070" />
+  </g>
+  <g
+     id="obj_8"
+     transform="matrix(1,0,0,1,645,0)"
+     opacity="1"
+     display="inline"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
+    <path
+       d="M 64.8241 434.6173 L 0 500 L 0 0 L 130 0 L 130 500 L 64.8241 434.6173 Z "
+       fill-opacity="1"
+       fill="#9c27b0"
+       stroke="none"
+       stroke-width="1"
+       stroke-linecap="square"
+       stroke-linejoin="miter"
+       id="path3073" />
+  </g>
+  <path
+     style="fill:#2196f3;fill-opacity:1;stroke:none"
+     inkscape:connector-curvature="0"
+     id="path3076"
+     d="M 134.8377,711.3194 75,770 75,0 l 120,0 0,770 -60.1623,-58.6806 z"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <g
+     style="display:inline"
+     display="inline"
+     transform="matrix(0,1.0116284,-0.99393351,0,236.82965,68.05605)"
+     id="obj_10"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
+    <text
+       style="font-size:130px;font-style:normal;font-weight:normal;letter-spacing:10;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lato"
+       id="text3079"
+       font-style="normal"
+       font-weight="normal"
+       letter-spacing="10"
+       font-size="130"
+       y="0"
+       x="0">
+      <tspan
+         id="tspan3081"
+         y="0"
+         x="0">bookstream</tspan>
+    </text>
+  </g>
 </svg>
