@@ -40,12 +40,14 @@
      id="namedview3083"
      showgrid="false"
      inkscape:zoom="0.47803364"
-     inkscape:cx="674.3987"
-     inkscape:cy="286.37853"
+     inkscape:cx="339.69422"
+     inkscape:cy="202.70241"
      inkscape:window-x="4"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3055" />
+     inkscape:current-layer="svg3055"
+     showguides="true"
+     inkscape:guide-bbox="true" />
   <defs
      id="defs3057">
     <style
@@ -122,35 +124,149 @@
          ry="159.75" />
     </clipPath>
   </defs>
-  <rect
-     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     id="rect3952"
-     width="640"
-     height="640"
-     x="752"
-     y="-2"
-     rx="160"
-     ry="160"
-     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/android.png"
-     inkscape:export-xdpi="71.552795"
-     inkscape:export-ydpi="71.552795" />
   <g
-     id="g3920"
-     transform="matrix(1.0015649,0,0,1.0015649,751.49922,-2.5007548)"
-     clip-path="url(#clipPath3948)"
-     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/android.png"
-     inkscape:export-xdpi="71.552795"
-     inkscape:export-ydpi="71.552795">
+     id="g4212"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/app-icon/512x512.png"
+     inkscape:export-xdpi="70.239998"
+     inkscape:export-ydpi="70.239998"
+     transform="translate(-2,0)">
     <rect
-       style="fill:#ffffff;fill-opacity:1"
-       id="rect3922"
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/app-icon/48dpi.png"
+       ry="160"
+       rx="160"
+       y="-8"
+       x="758"
+       height="640"
+       width="640"
+       id="rect3952"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:16;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <g
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/app-icon/48dpi.png"
+       clip-path="url(#clipPath3948)"
+       transform="matrix(1.0015649,0,0,1.0015649,757.49922,-8.5007548)"
+       id="g3920">
+      <rect
+         y="0"
+         x="0"
+         height="640"
+         width="640"
+         id="rect3922"
+         style="fill:#ffffff;fill-opacity:1" />
+      <g
+         clip-path="url(#clipPath3861)"
+         style="display:inline"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+         display="inline"
+         transform="translate(393,-610)"
+         id="g3924">
+        <path
+           style="fill:#f44336;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0"
+           id="path3926"
+           d="M 54.8512,1092.2491 0,1150 0,0 l 110,0 0,1150 -55.1488,-57.7509 z" />
+      </g>
+      <g
+         clip-path="url(#clipPath3865)"
+         style="display:inline"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+         display="inline"
+         transform="translate(257,-510)"
+         id="g3928">
+        <path
+           style="fill:#4caf50;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0"
+           id="path3930"
+           d="M 59.8377,840.7837 0,900 0,0 120,0 120,900 59.8377,840.7837 z" />
+      </g>
+      <g
+         clip-path="url(#clipPath3869)"
+         style="display:inline"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+         display="inline"
+         transform="translate(101,-580)"
+         id="g3932">
+        <path
+           style="fill:#ffc107;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0"
+           id="path3934"
+           d="M 69.8106,1224.2436 0,1300 0,0 l 140,0 0,1300 -70.1894,-75.7564 z" />
+      </g>
+      <g
+         clip-path="url(#clipPath3857)"
+         style="display:inline"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+         display="inline"
+         transform="translate(519,-280)"
+         id="g3936">
+        <path
+           style="fill:#9c27b0;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0"
+           id="path3938"
+           d="M 64.8241,434.6173 0,500 0,0 130,0 130,500 64.8241,434.6173 z" />
+      </g>
+      <path
+         transform="translate(-110,-380)"
+         clip-path="url(#clipPath3873)"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+         d="M 134.8377,621.3194 75,680 l 0,-770 120,0 0,770 -60.1623,-58.6806 z"
+         id="path3940"
+         inkscape:connector-curvature="0"
+         style="fill:#2196f3;fill-opacity:1;stroke:none" />
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
+         id="g3942"
+         transform="matrix(0,0.64268156,-0.69575346,0,137.28076,42.412089)"
+         display="inline"
+         style="fill:#ffffff;display:inline">
+        <text
+           x="0"
+           y="0"
+           font-size="130"
+           letter-spacing="10"
+           font-weight="normal"
+           font-style="normal"
+           id="text3944"
+           style="font-size:130px;font-style:normal;font-weight:normal;letter-spacing:10;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lato">
+          <tspan
+             style="fill:#ffffff"
+             x="0"
+             y="0"
+             id="tspan3946">bookstream</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g3153"
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/facebook-small.png"
+     inkscape:export-xdpi="2.25"
+     inkscape:export-ydpi="2.25">
+    <rect
+       style="fill:none;fill-opacity:1"
+       id="rect3114"
        width="640"
        height="640"
-       x="0"
+       x="-750"
        y="0" />
     <g
-       id="g3924"
-       transform="translate(393,-610)"
+       id="g3116"
+       transform="translate(-357,-610)"
        display="inline"
        inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
        inkscape:export-xdpi="90"
@@ -159,13 +275,13 @@
        clip-path="url(#clipPath3861)">
       <path
          d="M 54.8512,1092.2491 0,1150 0,0 l 110,0 0,1150 -55.1488,-57.7509 z"
-         id="path3926"
+         id="path3118"
          inkscape:connector-curvature="0"
          style="fill:#f44336;fill-opacity:1;stroke:none" />
     </g>
     <g
-       id="g3928"
-       transform="translate(257,-510)"
+       id="g3120"
+       transform="translate(-493,-510)"
        display="inline"
        inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
        inkscape:export-xdpi="90"
@@ -174,13 +290,13 @@
        clip-path="url(#clipPath3865)">
       <path
          d="M 59.8377,840.7837 0,900 0,0 120,0 120,900 59.8377,840.7837 z"
-         id="path3930"
+         id="path3122"
          inkscape:connector-curvature="0"
          style="fill:#4caf50;fill-opacity:1;stroke:none" />
     </g>
     <g
-       id="g3932"
-       transform="translate(101,-580)"
+       id="g3124"
+       transform="translate(-649,-580)"
        display="inline"
        inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
        inkscape:export-xdpi="90"
@@ -189,13 +305,13 @@
        clip-path="url(#clipPath3869)">
       <path
          d="M 69.8106,1224.2436 0,1300 0,0 l 140,0 0,1300 -70.1894,-75.7564 z"
-         id="path3934"
+         id="path3126"
          inkscape:connector-curvature="0"
          style="fill:#ffc107;fill-opacity:1;stroke:none" />
     </g>
     <g
-       id="g3936"
-       transform="translate(519,-280)"
+       id="g3128"
+       transform="translate(-231,-280)"
        display="inline"
        inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
        inkscape:export-xdpi="90"
@@ -204,31 +320,31 @@
        clip-path="url(#clipPath3857)">
       <path
          d="M 64.8241,434.6173 0,500 0,0 130,0 130,500 64.8241,434.6173 z"
-         id="path3938"
+         id="path3130"
          inkscape:connector-curvature="0"
          style="fill:#9c27b0;fill-opacity:1;stroke:none" />
     </g>
     <path
        style="fill:#2196f3;fill-opacity:1;stroke:none"
        inkscape:connector-curvature="0"
-       id="path3940"
+       id="path3132"
        d="M 134.8377,621.3194 75,680 l 0,-770 120,0 0,770 -60.1623,-58.6806 z"
        inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"
        clip-path="url(#clipPath3873)"
-       transform="translate(-110,-380)" />
+       transform="translate(-860,-380)" />
     <g
        style="fill:#ffffff;display:inline"
        display="inline"
-       transform="matrix(0,0.64268156,-0.69575346,0,137.28076,42.412089)"
-       id="g3942"
+       transform="matrix(0,0.64268156,-0.69575346,0,-612.71924,42.412089)"
+       id="g3134"
        inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/bookstreams.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
       <text
          style="font-size:130px;font-style:normal;font-weight:normal;letter-spacing:10;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lato"
-         id="text3944"
+         id="text3136"
          font-style="normal"
          font-weight="normal"
          letter-spacing="10"
@@ -236,7 +352,7 @@
          y="0"
          x="0">
         <tspan
-           id="tspan3946"
+           id="tspan3138"
            y="0"
            x="0"
            style="fill:#ffffff">bookstream</tspan>
@@ -245,9 +361,9 @@
   </g>
   <g
      id="g3899"
-     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/images/ios.png"
-     inkscape:export-xdpi="144"
-     inkscape:export-ydpi="144">
+     inkscape:export-filename="/Users/pscanf/projects/bookstreams/front/assets/app-icon/ios-76x76.png"
+     inkscape:export-xdpi="10.69"
+     inkscape:export-ydpi="10.69">
     <rect
        y="0"
        x="0"

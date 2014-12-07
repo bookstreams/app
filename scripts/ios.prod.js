@@ -52,37 +52,35 @@ BPromise.all(buildPromises).then(function () {
                 name: "ios"
             }
         };
-        /*
-        res.widget.platform.splash = [
-            {width: "320", height: "480"},
-            {width: "640", height: "960"},
-            {width: "768", height: "1024"},
-            {width: "1536", height: "2048"},
-            {width: "640", height: "1136"},
-            {width: "750", height: "1334"},
-            {width: "1242", height: "2208"}
-        ].map(function (splash) {
-            splash.src = "www/assets/app-splash/" + splash.width + "x" + splash.height + ".png";
-            return {
-                $: splash
-            };
-        });
         res.widget.platform.icon = [
-            29,        40,        50,
-            57,        58,        60,
-            72,        76,        80,
-            100,    114,    120,
-            144,    152,    180
+            76,
+            120,
+            152,
+            180
         ].map(function (size) {
             return {
                 $: {
-                    src: "www/assets/app-icon/" + size + "x" + size + ".png",
+                    src: "www/assets/app-icon/ios-" + size + "x" + size + ".png",
                     width: "" + size,
                     height: "" + size
                 }
             };
         });
-        */
+        res.widget.platform.splash = [
+            ["640", "960"],
+            ["768", "1024"],
+            ["1536", "2048"],
+            ["640", "1136"],
+            ["750", "1334"],
+            ["1242", "2208"]
+        ].map(function (size) {
+            return {$: {
+                src: "www/assets/app-splash/" + size[0] + "x" + size[1] + ".png",
+                width: size[0],
+                height: size[1]
+            }};
+        });
+
         var builder = new xml2js.Builder();
         var xml = builder.buildObject(res);
         fs.writeFileSync("builds/ios/config.xml", xml, "utf8");
