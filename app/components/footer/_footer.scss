@@ -30,4 +30,16 @@
         font-size: 36px;
     }
 
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background: rgba($app-black, .9);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: $app-white;
+    }
+
 }

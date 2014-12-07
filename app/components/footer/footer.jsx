@@ -11,6 +11,11 @@ var Footer = React.createClass({
     mixins: [
         Router.Navigation
     ],
+    getInitialState: function () {
+        return {
+            insertBookError: null
+        };
+    },
     scan: function () {
         var self = this;
         Q()
@@ -27,9 +32,40 @@ var Footer = React.createClass({
                 self.transitionTo("feed");
             })
             .fail(function (err) {
-                console.log("ERROR");
                 console.log(err);
+                self.setState({
+                    insertBookError: err
+                });
             });
+    },
+    getBookErrorModal: function () {
+        if (this.state.insertBookError) {
+            return (
+                <div className="overlay" onClick={this.closeErrorModal}>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <h1>
+                        Oh snap!
+                        <br />
+                        An error occurred!
+                    </h1>
+                    <br />
+                    <br />
+                    <h3>
+                        {this.insertBookError}
+                    </h3>
+                </div>
+            );
+        } else {
+            return null;
+        }
+    },
+    closeErrorModal: function () {
+        this.setState({
+            insertBookError: null
+        });
     },
     render: function () {
         return (
@@ -43,6 +79,7 @@ var Footer = React.createClass({
                 <Link to="add">
                     <Icon icon="plus" />
                 </Link>
+                {this.getBookErrorModal()}
             </footer>
         );
     }

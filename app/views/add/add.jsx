@@ -143,7 +143,6 @@ var Add = React.createClass({
             <div id="add">
                 <Col xs={12} className="text-center">
                     <br />
-                    <br />
                     {this.getScanButton(
                         "barcode",
                         "1",
@@ -154,7 +153,6 @@ var Add = React.createClass({
                         "2",
                         "Scan the qrcode on the bookstreams sticker"
                     )}
-                    <br />
                     <br />
                     {this.getSendButton()}
                     {this.getBookErrorModal()}

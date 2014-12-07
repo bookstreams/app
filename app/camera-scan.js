@@ -16,7 +16,7 @@ var cameraScan = function () {
         if (Math.random() > 0.5) {
             deferred.reject(new Error("NOT THIS TIME!!!"));
         } else {
-            deferred.resolve("9788854165472");
+            deferred.resolve("9788845907555");
         }
     }
     return deferred.promise;
