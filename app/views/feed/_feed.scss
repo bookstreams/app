@@ -1,2 +1,39 @@
 #feed {
+
+    .description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        .clarification {
+            margin-top: 20px;
+            cursor: pointer;
+            color: $app-grey;
+            font-size: 14px;
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            color: $app-red;
+            font-size: 32px;
+        }
+
+        .instructions {
+            margin-top: 100px;
+            text-transform: uppercase;
+            color: $app-blue;
+            font-size: 20px;
+        }
+
+        .red {
+            color: $app-red;
+        }
+
+    }
+
 }
