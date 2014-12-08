@@ -44,10 +44,12 @@ var Footer = React.createClass({
         }
         return (
             <div className="overlay" onClick={this.closeErrorModal}>
-                <Icon icon="exclamation-triangle" className="error-icon" />
-                <p className="error-message">
+                <div className="error-icon">
+                    <Icon icon="mdi-action-report-problem" />
+                </div>
+                <div className="error-message">
                     {this.state.addBookScanError.reason}
-                </p>
+                </div>
             </div>
         );
     },
@@ -60,13 +62,13 @@ var Footer = React.createClass({
         return (
             <footer className="app-footer">
                 <Link to="feed">
-                    <Icon icon="book" />
+                    <Icon icon="mdi-av-my-library-books" />
                 </Link>
-                <span onClick={this.scan} className="camera-button">
-                    <Icon icon="qrcode" />
-                </span>
+                <a onClick={this.scan} className="camera-button">
+                    <Icon icon="mdi-image-camera" />
+                </a>
                 <Link to="add">
-                    <Icon icon="plus" />
+                    <Icon icon="mdi-content-add-circle-outline" />
                 </Link>
                 {this.getBookErrorModal()}
             </footer>

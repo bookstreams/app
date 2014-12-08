@@ -9,25 +9,25 @@
     color: $app-white;
 
     a {
+        display: inline-block;
+        width: calc(100% / 3);
+        height: $footer-height-px;
+        text-decoration: none;
         color: $app-white;
 
         &.active {
             color: $app-indigo;
         }
 
+        i {
+            line-height: $footer-height-px;
+            font-size: 36px;
+        }
+
     }
 
     .camera-button {
         cursor: pointer;
-    }
-
-    .fa {
-        margin: {
-            left: 40px;
-            right: 40px;
-        }
-        line-height: $footer-height-px;
-        font-size: 36px;
     }
 
     .overlay {
@@ -44,11 +44,7 @@
         .error-icon {
             margin-top: 100px;
             color: $app-white;
-            font-size: 64px;
-        }
-
-        .error-message {
-            margin-top: 20px;
+            font-size: 96px;
         }
 
     }

@@ -4,7 +4,7 @@ var Icon = React.createClass({
     render: function () {
         var customClass = this.props.className ? this.props.className + " " : "";
         return (
-            <i className={customClass + "fa fa-" + this.props.icon}></i>
+            <i className={customClass + this.props.icon}></i>
         );
     }
 });

@@ -6,6 +6,7 @@ var Header = React.createClass({
     render: function () {
         return (
             <header className="app-header">
+                <img className="header-decoration" src="assets/images/header-decoration.png" />
                 <div className="logo">
                     bookstreams
                 </div>

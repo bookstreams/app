@@ -16,18 +16,23 @@ var Feed = React.createClass({
         return (
             <div className="description">
                 <p className="instructions">
+                    to start
+                    <br />
                     scan the <span className="red">bookstreams</span> sticker
                     <br />
-                    on your book to start
+                    on your book
                 </p>
                 <p className="clarification" onClick={this.openLandingPage}>
                     no idea of what we're talking about?
                     <br />
                     click here to find out
                 </p>
-                <p className="arrow">
-                    <Icon icon="long-arrow-down" />
-                </p>
+                <div className="start-here">
+                    <span className="red">START HERE</span>
+                </div>
+                <div className="arrow">
+                    <Icon icon="mdi-action-trending-neutral" className="arrow-icon" />
+                </div>
             </div>
         );
     },

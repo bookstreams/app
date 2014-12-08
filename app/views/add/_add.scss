@@ -1,9 +1,5 @@
 #add {
 
-    .grey-icon {
-        color: $app-grey;
-    }
-
     .overlay {
         position: fixed;
         top: 0;
@@ -18,16 +14,28 @@
         .error-icon {
             margin-top: 100px;
             color: $app-white;
-            font-size: 64px;
+            font-size: 96px;
         }
 
-        .error-message {
-            margin-top: 20px;
+    }
+
+    .send-button {
+        position: relative;
+        padding: 0;
+        height: 50px;
+        line-height: 50px;
+
+        img {
+            position: absolute;
+            top: 12.5px;
+            left: calc(50% - 12.5px);
+            height: 25px;
         }
 
     }
 
     .well {
+        position: relative;
         margin: 15px;
         text-align: center;
 
@@ -37,6 +45,13 @@
 
         &.valid {
             color: $app-green;
+        }
+
+        .check {
+            position: absolute;
+            top: calc(50% - 16px);
+            left: 20px;
+            font-size: 32px;
         }
 
     }

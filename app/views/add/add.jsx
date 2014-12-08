@@ -82,6 +82,7 @@ var Add = React.createClass({
         if (this.state[target]) {
             return (
                 <Well className="valid">
+                    <Icon icon="mdi-action-done" className="check" />
                     <h5>STEP {step}</h5>
                     <h4>{titleCaseWord(target)} acquired</h4>
                 </Well>
@@ -112,13 +113,13 @@ var Add = React.createClass({
         }
         if (this.state.insertingBook) {
             return (
-                <Well>
-                    <Icon icon="circle-o-notch" className="fa-spin grey-icon" />
+                <Well className="send-button">
+                    <img src="assets/images/spinner.gif" />
                 </Well>
             );
         } else {
             return (
-                <Well onClick={this.insertBook}>
+                <Well className="send-button" onClick={this.insertBook}>
                     SEND
                 </Well>
             );
@@ -130,10 +131,12 @@ var Add = React.createClass({
         }
         return (
             <div className="overlay" onClick={this.closeErrorModal}>
-                <Icon icon="exclamation-triangle" className="error-icon" />
-                <p className="error-message">
+                <div className="error-icon">
+                    <Icon icon="mdi-action-report-problem" />
+                </div>
+                <div className="error-message">
                     {this.state.insertBookError.reason}
-                </p>
+                </div>
             </div>
         );
     },
