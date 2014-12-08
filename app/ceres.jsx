@@ -8,13 +8,15 @@ var init = function (flux) {
             domain: "192.168.0.152:3000"
         },
         "ios.prod": {
-            domain: "api.bookstreams.org"
+            domain: "api.bookstreams.org",
+            ssl: true
         },
         "android.dev": {
             domain: "192.168.0.152:3000"
         },
         "android.prod": {
-            domain: "api.bookstreams.org"
+            domain: "api.bookstreams.org",
+            ssl: true
         }
     };
 
