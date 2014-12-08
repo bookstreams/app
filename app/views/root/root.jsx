@@ -10,12 +10,14 @@ var Root = React.createClass({
         FluxMixin,
         StoreWatchMixin(
             "BooksStore",
+            "ErrorStore",
             "UsersStore"
         )
     ],
     getStateFromFlux: function () {
         return {
             books: this.props.flux.store("BooksStore").getBooks(),
+            error: this.props.flux.store("ErrorStore").getError(),
             users: this.props.flux.store("UsersStore").getUsers()
         };
     },
@@ -24,6 +26,7 @@ var Root = React.createClass({
             <Router.RouteHandler
                 flux={this.props.flux}
                 books={this.state.books}
+                error={this.state.error}
                 users={this.state.users}
             />
         );

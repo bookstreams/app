@@ -1,3 +1,5 @@
+var AppError = require("./app-error.js");
+
 var geolocate = function () {
     var deferred = Q.defer();
     var ONE_HOUR_IN_MILLISECONDS = 60 * 60 * 1000;
@@ -13,7 +15,10 @@ var geolocate = function () {
         });
     };
     var onError = function (err) {
-        deferred.reject(err);
+        deferred.reject(new AppError(
+            "geolocation",
+            "Could not get your location. Turn on your GPS and retry"
+        ));
     };
     navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
     return deferred.promise;

@@ -9,8 +9,9 @@ var Button = Bootstrap.Button;
 var Col    = Bootstrap.Col;
 var Well   = Bootstrap.Well;
 
-var cameraScan = require("../../camera-scan.js");
-var geolocate  = require("../../geolocate.js");
+var AppError   = require("../../lib/app-error.js");
+var cameraScan = require("../../lib/camera-scan.js");
+var geolocate  = require("../../lib/geolocate.js");
 
 var titleCaseWord = function (word) {
     return word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase();
@@ -21,11 +22,7 @@ var Add = React.createClass({
         Router.Navigation
     ],
     getInitialState: function () {
-        return {
-            barcode: null,
-            qrcode: null,
-            insertingBook: null
-        };
+        return {};
     },
     scan: function (target) {
         var self = this;
@@ -47,42 +44,40 @@ var Add = React.createClass({
     },
     insertBook: function () {
         var self = this;
-        if (self.state.insertingBook) {
-            return;
-        }
         self.setState({
             insertingBook: true
         });
         Q()
             .then(function () {
-                return self.geolocatePromise;
+                return geolocate();
             })
             .then(function (coords) {
-                return Ceres.call(
+                var call = Ceres.call(
                     "insertBook",
                     self.state.barcode,
                     self.state.qrcode,
                     coords
-                ).result;
+                );
+                return call.result.fail(function (err) {
+                    throw new AppError(
+                        "server",
+                        err.reason
+                    );
+                });
             })
             .then(function () {
-                self.setState({
-                    insertingBook: null
-                });
                 self.transitionTo("feed");
             })
             .fail(function (err) {
-                console.log(err);
-                self.setState({
-                    insertBookError: err
-                });
+                self.replaceState({});
+                self.props.flux.actions.errorThrow(err);
             });
     },
     getScanButton: function (target, step, instructions) {
         if (this.state[target]) {
             return (
                 <Well className="valid">
-                    <Icon icon="mdi-action-done" className="check" />
+                    <Icon icon="mdi-action-done" className="status" />
                     <h5>STEP {step}</h5>
                     <h4>{titleCaseWord(target)} acquired</h4>
                 </Well>
@@ -90,12 +85,9 @@ var Add = React.createClass({
         } else if (this.state[target + "Error"]) {
             return (
                 <Well className="invalid" onClick={this.scan(target)}>
+                    <Icon icon="mdi-content-clear" className="status" />
                     <h5>STEP {step}</h5>
-                    <h4>
-                        An error occurred scanning the {target}
-                        <br />
-                        try again
-                    </h4>
+                    <h4>{titleCaseWord(target)} scan failed<br />try again</h4>
                 </Well>
             );
         } else {
@@ -111,40 +103,21 @@ var Add = React.createClass({
         if (!this.state.barcode || !this.state.qrcode) {
             return null;
         }
-        if (this.state.insertingBook) {
-            return (
-                <Well className="send-button">
-                    <img src="assets/images/spinner.gif" />
-                </Well>
-            );
-        } else {
-            return (
-                <Well className="send-button" onClick={this.insertBook}>
-                    SEND
-                </Well>
-            );
-        }
-    },
-    getBookErrorModal: function () {
-        if (!this.state.insertBookError) {
-            return null;
-        }
-        return (
-            <div className="overlay" onClick={this.closeErrorModal}>
-                <div className="error-icon">
-                    <Icon icon="mdi-action-report-problem" />
-                </div>
-                <div className="error-message">
-                    {this.state.insertBookError.reason}
-                </div>
-            </div>
+        var content = (
+            this.state.insertingBook ?
+                <img src="assets/images/spinner.gif" /> :
+                <span>SEND</span>
         );
-    },
-    closeErrorModal: function () {
-        this.replaceState({});
-    },
-    componentDidMount: function () {
-        this.geolocatePromise = geolocate();
+        var action = (
+            this.state.insertingBook ?
+                null :
+                this.insertBook
+        );
+        return (
+            <Well className="send-button" onClick={action}>
+                {content}
+            </Well>
+        );
     },
     render: function () {
         return (
@@ -163,7 +136,6 @@ var Add = React.createClass({
                     )}
                     <br />
                     {this.getSendButton()}
-                    {this.getBookErrorModal()}
                 </Col>
             </div>
         );

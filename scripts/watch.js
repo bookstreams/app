@@ -15,7 +15,7 @@ var watchAppIndex = function () {
 };
 
 var watchAppScripts = function () {
-	return gulp.watch("app/**/*.jsx");
+	return gulp.watch(["app/**/*.jsx", "app/**/*.js"]);
 };
 
 var watchAppStyles = function () {

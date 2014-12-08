@@ -3,8 +3,9 @@ var Router          = require("react-router");
 var TransitionGroup = require("react/lib/ReactCSSTransitionGroup");
 
 var Components = require("../../components");
-var Footer = Components.Footer;
-var Header = Components.Header;
+var ErrorModal = Components.ErrorModal;
+var Footer     = Components.Footer;
+var Header     = Components.Header;
 
 var PostLogin = React.createClass({
     mixins: [Router.State],
@@ -21,7 +22,8 @@ var PostLogin = React.createClass({
                         users={this.props.users}
                     />
                 </TransitionGroup>
-                <Footer />
+                <Footer flux={this.props.flux} />
+                <ErrorModal error={this.props.error} flux={this.props.flux} />
             </div>
         );
     }

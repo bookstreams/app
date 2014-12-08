@@ -4,18 +4,14 @@ var Router = require("react-router");
 var Icon = require("../icon/icon.jsx");
 var Link = Router.Link;
 
-var cameraScan = require("../../camera-scan.js");
-var geolocate  = require("../../geolocate.js");
+var AppError   = require("../../lib/app-error.js");
+var cameraScan = require("../../lib/camera-scan.js");
+var geolocate  = require("../../lib/geolocate.js");
 
 var Footer = React.createClass({
     mixins: [
         Router.Navigation
     ],
-    getInitialState: function () {
-        return {
-            addBookScanError: null
-        };
-    },
     scan: function () {
         var self = this;
         Q()
@@ -26,37 +22,23 @@ var Footer = React.createClass({
                 return Q.all([cameraScan(), coords]);
             })
             .spread(function (qrcode, coords) {
-                return Ceres.call("addBookScan", qrcode, coords).result;
+                var call = Ceres.call("addBookScan", qrcode, coords);
+                return call.result.fail(function (err) {
+                    throw new AppError(
+                        "server",
+                        err.reason
+                    );
+                });
             })
             .then(function () {
                 self.transitionTo("feed");
             })
             .fail(function (err) {
-                console.log(err);
-                self.setState({
-                    addBookScanError: err
-                });
+                if (err.type === "scan-cancelled") {
+                    return;
+                }
+                self.props.flux.actions.errorThrow(err);
             });
-    },
-    getBookErrorModal: function () {
-        if (!this.state.addBookScanError) {
-            return null;
-        }
-        return (
-            <div className="overlay" onClick={this.closeErrorModal}>
-                <div className="error-icon">
-                    <Icon icon="mdi-action-report-problem" />
-                </div>
-                <div className="error-message">
-                    {this.state.addBookScanError.reason}
-                </div>
-            </div>
-        );
-    },
-    closeErrorModal: function () {
-        this.setState({
-            addBookScanError: null
-        });
     },
     render: function () {
         return (
@@ -70,7 +52,6 @@ var Footer = React.createClass({
                 <Link to="add">
                     <Icon icon="mdi-content-add-circle-outline" />
                 </Link>
-                {this.getBookErrorModal()}
             </footer>
         );
     }
