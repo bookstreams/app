@@ -7,20 +7,20 @@
     height: 100%;
 
     .swipe-view-enter {
-        left: -100%;
-        transition: left .2s;
+        transform: translate3d(-100%, 0, 0);
+        transition: transform .4s;
 
         &.swipe-view-enter-active {
-            left: 0;
+            transform: translate3d(0, 0, 0);
         }
     }
 
     .swipe-view-leave {
-        left: 0;
-        transition: left .2s;
+        transform: translate3d(0, 0, 0);
+        transition: transform .4s;
 
         &.swipe-view-leave-active {
-            left: 100%;
+            transform: translate3d(100%, 0, 0);
         }
     }
 
