@@ -20,9 +20,9 @@ var routes = (
     <Route handler={Views.Root}>
         <Route name="postLogin" path="/app" handler={Views.PostLogin}>
             <Route name="add" handler={Views.Add} addHandlerKey={true} />
-            <Route name="feed" handler={Views.Feed} addHandlerKey={true} />
-            <Route name="geo" handler={Views.Geo} addHandlerKey={true} />
-            <DefaultRoute handler={Views.Feed} />
+            <Route name="my-books" handler={Views.MyBooks} addHandlerKey={true} />
+            <Route name="scan" handler={Views.Scan} addHandlerKey={true} />
+            <DefaultRoute handler={Views.MyBooks} />
         </Route>
         <Route name="login" path="/" handler={Views.Login} />
         <DefaultRoute handler={Views.Login} />

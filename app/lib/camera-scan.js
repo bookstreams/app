@@ -21,11 +21,13 @@ var cameraScan = function () {
     if (window.cordova) {
         cordova.plugins.barcodeScanner.scan(onSuccess, onError);
     } else {
+        /*
         deferred.reject(new AppError(
             "scan-failed",
             "Scanning failed, please try again"
         ));
-        //deferred.resolve("9788845907555");
+        */
+        deferred.resolve("9788845907555");
     }
     return deferred.promise;
 };

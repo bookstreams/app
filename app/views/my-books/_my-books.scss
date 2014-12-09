@@ -1,0 +1,22 @@
+.app-view-my-books {
+
+    .placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        .instructions {
+            display: block;
+            margin-top: 100px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $app-blue;
+            font-size: 20px;
+        }
+
+    }
+
+}

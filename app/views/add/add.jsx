@@ -66,7 +66,7 @@ var Add = React.createClass({
                 });
             })
             .then(function () {
-                self.transitionTo("feed");
+                self.transitionTo("my-books");
             })
             .fail(function (err) {
                 self.replaceState({});

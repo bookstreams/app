@@ -22,7 +22,7 @@ var PostLogin = React.createClass({
                         users={this.props.users}
                     />
                 </TransitionGroup>
-                <Footer flux={this.props.flux} />
+                <Footer />
                 <ErrorModal error={this.props.error} flux={this.props.flux} />
             </div>
         );

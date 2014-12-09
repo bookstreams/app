@@ -14,7 +14,7 @@ var Login = React.createClass({
         var self = this;
         Ceres.loginWithFacebook()
             .then(function () {
-                self.transitionTo("feed");
+                self.transitionTo("scan");
             })
             .fail(function (err) {
                 console.log(err);
@@ -38,7 +38,7 @@ var Login = React.createClass({
             var def = Q.defer();
             Ceres.on("connected", function () {
                 Ceres.resumeLoginPromise
-                    .then(t.redirect.bind(t, "feed"))
+                    .then(t.redirect.bind(t, "scan"))
                     .finally(def.resolve.bind(def));
             });
             t.wait(def.promise);

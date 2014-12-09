@@ -1,0 +1,31 @@
+.app-view-scan {
+    text-align: center;
+
+    .clarification {
+        margin-top: 20px;
+        cursor: pointer;
+        color: $app-grey;
+        font-size: 14px;
+    }
+
+    .red {
+        color: $app-red;
+    }
+
+    .camera-icon {
+        cursor: pointer;
+        color: $app-red;
+        font-size: 96px;
+    }
+
+    .instructions {
+        display: block;
+        margin-top: 100px;
+        text-transform: uppercase;
+        text-decoration: none;
+        line-height: 36px;
+        color: $app-blue;
+        font-size: 18px;
+    }
+
+}
