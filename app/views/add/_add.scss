@@ -2,6 +2,7 @@
 
     .send-button {
         position: relative;
+        cursor: pointer;
         padding: 0;
         height: 50px;
         line-height: 50px;
@@ -18,6 +19,7 @@
     .well {
         position: relative;
         margin: 15px;
+        cursor: pointer;
         text-align: center;
 
         &.invalid {
